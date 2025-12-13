@@ -12,7 +12,6 @@ func init() {
 
 	if err != nil {
 		fmt.Println("Error loading .env file:", err)
-		os.Exit(1)
 	}
 }
 
@@ -22,4 +21,8 @@ func GetToken() string {
 
 func GetSiteUrl() string {
 	return os.Getenv("SITE_URL")
+}
+
+func GetChatID() string {
+	return os.Getenv("CHAT_ID")
 }
