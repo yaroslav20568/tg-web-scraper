@@ -101,6 +101,10 @@ func handleResponse(bot *telego.Bot, chatID int64, r *colly.Response) {
 func setupCollector(bot *telego.Bot, chatID int64) *colly.Collector {
 	c := colly.NewCollector()
 
+	c.OnHTML("a[href]", func(e *colly.HTMLElement) {
+		e.Request.Visit(e.Attr("href"))
+	})
+
 	c.OnResponse(func(r *colly.Response) {
 		handleResponse(bot, chatID, r)
 	})
