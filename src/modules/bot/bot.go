@@ -11,7 +11,7 @@ import (
 )
 
 func BotInit() *telego.Bot {
-	botToken := env.GetToken()
+	botToken := env.Config.Token
 
 	bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
 
@@ -23,7 +23,7 @@ func BotInit() *telego.Bot {
 }
 
 func toIntChatID() (int64, error) {
-	return strconv.ParseInt(env.GetChatID(), 10, 64)
+	return strconv.ParseInt(env.Config.ChatID, 10, 64)
 }
 
 func BotScraper() {
@@ -38,5 +38,5 @@ func BotScraper() {
 	}
 
 	c := parser.SetupCollector(bot, chatID)
-	c.Visit(env.GetSiteUrl())
+	c.Visit(env.Config.SiteUrl)
 }

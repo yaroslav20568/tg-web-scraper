@@ -7,22 +7,18 @@ import (
 	"github.com/joho/godotenv"
 )
 
+var Config TConfig
+
 func init() {
 	err := godotenv.Load()
 
 	if err != nil {
 		fmt.Println("Error loading .env file:", err)
 	}
-}
 
-func GetToken() string {
-	return os.Getenv("TOKEN")
-}
-
-func GetSiteUrl() string {
-	return os.Getenv("SITE_URL")
-}
-
-func GetChatID() string {
-	return os.Getenv("CHAT_ID")
+	Config = TConfig{
+		Token:   os.Getenv("TOKEN"),
+		SiteUrl: os.Getenv("SITE_URL"),
+		ChatID:  os.Getenv("CHAT_ID"),
+	}
 }
