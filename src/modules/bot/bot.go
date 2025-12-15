@@ -6,8 +6,8 @@ import (
 
 	"github.com/mymmrac/telego"
 
-	env "tg-web-scraper/config"
-	"tg-web-scraper/modules/parser"
+	env "tg-web-scraper/src/config"
+	"tg-web-scraper/src/modules/parser"
 )
 
 func BotInit() *telego.Bot {

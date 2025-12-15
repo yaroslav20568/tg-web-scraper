@@ -1,7 +1,7 @@
 package main
 
 import (
-	"tg-web-scraper/modules/bot"
+	"tg-web-scraper/src/modules/bot"
 )
 
 func main() {

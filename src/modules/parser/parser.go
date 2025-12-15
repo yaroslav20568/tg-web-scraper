@@ -8,7 +8,7 @@ import (
 	"github.com/gocolly/colly"
 	"github.com/mymmrac/telego"
 
-	"tg-web-scraper/modules/message"
+	"tg-web-scraper/src/modules/message"
 )
 
 func extractSectionData(section *goquery.Selection) message.TMessage {
